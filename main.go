@@ -13,14 +13,13 @@ func main() {
 	port := ":8000"
 
 	r.HandleFunc("/", handler).Methods("GET")
+	r.HandleFunc("/{id}", person.Show).Methods("GET")
 	r.HandleFunc("/bye", byeHandler).Methods("GET")
 	r.HandleFunc("/t1", person.Say).Methods("POST")
 	r.HandleFunc("/t2", person.Say2).Methods("POST")
 
-	http.Handle("/", middleware(r))
-
 	fmt.Println("http://localhost" + port)
-	http.ListenAndServe(port, nil)
+	http.ListenAndServe(port, r)
 
 }
 
