@@ -14,8 +14,8 @@ func main() {
 
 	r.HandleFunc("/", handler).Methods("GET")
 	r.HandleFunc("/bye", byeHandler).Methods("GET")
-	r.HandleFunc("t1", person.Say).Methods("POST")
-	r.HandleFunc("t2", person.Say2).Methods("POST")
+	r.HandleFunc("/t1", person.Say).Methods("POST")
+	r.HandleFunc("/t2", person.Say2).Methods("POST")
 
 	http.Handle("/", middleware(r))
 
