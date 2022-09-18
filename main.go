@@ -9,7 +9,6 @@ import (
 )
 
 func main() {
-	//ref : https://wtlin1228.medium.com/go-%E7%AD%86%E8%A8%98-http-server-d702c87e4263
 	r := mux.NewRouter()
 	port := ":8000"
 
