@@ -5,7 +5,7 @@ type Struct1 struct {
 }
 
 func (s *Struct1) SetName(n string) {
-	s.name = n
+	s.name = n + " modified from method"
 }
 
 func (s Struct1) GetName() string {
